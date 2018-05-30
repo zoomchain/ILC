@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>AOVA客户端 1.0 -简体中文版</title>
+
+	<link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
+	<link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
+	<link href="img/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
+	<link href="img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
+	<link href="img/favicon.png" rel="icon" type="image/png">
+	<link href="img/favicon.ico" rel="shortcut icon">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+	<![endif]-->
+	 
+
+	<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+	<link rel="stylesheet" href="css/lib/lobipanel/lobipanel.min.css">
+	<link rel="stylesheet" href="css/separate/vendor/lobipanel.min.css">
+	<link rel="stylesheet" href="css/lib/jqueryui/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/separate/pages/widgets.min.css">
+    <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="with-side-menu control-panel control-panel-compact">
+
+	<header class="site-header">
+	    <div class="container-fluid">
+	        <a href="#" class="site-logo">
+	            <img class="hidden-md-down" src="img/logo-2.png" alt="">
+	        
+	        </a>
+
+	        <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">
+	            <span>toggle menu</span>
+	        </button>
+
+	        <button class="hamburger hamburger--htla">
+	            <span>toggle menu</span>
+	        </button>
+	        <div class="site-header-content">
+	            <div class="site-header-content-in">
+	                <div class="site-header-shown">
+	            
+	     
+
+
+	                    <div class="dropdown dropdown-lang">
+	                        <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                            <span class="flag-icon flag-icon-us"></span>
+	                        </button>
+	                        <div class="dropdown-menu dropdown-menu-right">
+	                            <div class="dropdown-menu-col">
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-ru"></span>Русский</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-de"></span>Deutsch</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-it"></span>Italiano</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-es"></span>Español</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-pl"></span>Polski</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-li"></span>Lietuviu</a>
+	                            </div>
+	                            <div class="dropdown-menu-col">
+	                                <a class="dropdown-item current" href="#"><span class="flag-icon flag-icon-us"></span>English</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-fr"></span>Français</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-by"></span>Беларускi</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-ua"></span>Українська</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-cz"></span>Česky</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-ch"></span>中國</a>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	               
+
+	                    <button type="button" class="burger-right">
+	                        <i class="font-icon-menu-addl"></i>
+	                    </button>
+	                </div><!--.site-header-shown-->
+
+	                <div class="mobile-menu-right-overlay"></div>
+	                <div class="site-header-collapsed">
+	                    <div class="site-header-collapsed-in">
+	                        <div class="dropdown dropdown-typical">
+	                            <div class="dropdown-menu" aria-labelledby="dd-header-sales">
+	                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>Quant and Verbal</a>
+	                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>Real Gmat Test</a>
+	                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-speed"></span>Prep Official App</a>
+	                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer Test</a>
+	                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>Third Party Test</a>
+	                            </div>
+	                        </div>
+	                        <div class="dropdown dropdown-typical">
+	                            <a class="dropdown-toggle" id="dd-header-marketing" data-target="#" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                                <span class="font-icon font-icon-cogwheel"></span>
+	                                <span class="lbl">导出信息</span>
+	                            </a>
+
+	                            <div class="dropdown-menu" aria-labelledby="dd-header-marketing">
+	                                <a class="dropdown-item" href="#">导出交易记录</a>
+	                                 <div class="dropdown-divider"></div>
+	                                <a class="dropdown-item" href="#">导出我的信息</a>
+
+
+	                            </div>
+	                        </div>
+	                        <div class="dropdown dropdown-typical">
+	                            <a class="dropdown-toggle" id="dd-header-social" data-target="#" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                                <span class="font-icon font-icon-share"></span>
+	                                <span class="lbl">应用分享</span>
+	                            </a>
+
+	                            <div class="dropdown-menu" aria-labelledby="dd-header-social">
+	                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>一键分享</a>
+	                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>测试环境</a>
+
+	                            </div>
+	                        </div>
+	                        <div class="dropdown dropdown-typical">
+	                            <a href="#" class="dropdown-toggle no-arr">
+	                                <span class="font-icon font-icon-page"></span>
+	                                <span class="lbl">我的项目</span>
+	                                <span class="label label-pill label-danger">35</span>
+	                            </a>
+	                        </div>
+
+
+	                        <div class="dropdown">
+
+
+	                        </div>
+	                        <div class="help-dropdown">
+
+
+
+
+	                        <a class="btn btn-nav btn-rounded btn-inline btn-danger-outline" href="" onclick="t();">
+	                            一键挖矿
+	                        </a>
+
+
+	                        <a class="btn btn-nav btn-rounded btn-inline btn-danger-outline" href="" onclick="ttt();">
+	                            广播
+	                        </a>
+
+
+	                        <a class="btn btn-nav btn-rounded btn-inline  " href="" onclick="tt();">
+	                            停止
+	                        </a>
+
+
+
+
+	                        
+	                        <div class="site-header-search-container">
+	                            <form class="site-header-search closed">
+	                                <input type="text" placeholder="搜索应用"/>
+	                                <button type="submit">
+	                                    <span class="font-icon-search"></span>
+	                                </button>
+	                                <div class="overlay"></div>
+	                            </form>
+	                        </div>
+	                    </div><!--.site-header-collapsed-in-->
+	                </div><!--.site-header-collapsed-->
+	            </div><!--site-header-content-in-->
+	        </div><!--.site-header-content-->
+	    </div><!--.container-fluid-->
+	</header><!--.site-header-->
+
+	<div class="mobile-menu-left-overlay"></div>
+	<nav class="side-menu">
+	    <ul class="side-menu-list">
+	        <li class="grey">
+	       <a href="index.html">  <span>
+	                <i class="font-icon font-icon-dashboard"></i>
+	               <span class="lbl">总控制台</span>
+	            </span> </a>
+
+	        </li>
+
+
+
+	           <li class="blue-dirty">
+	            <a href="prices.html">
+	                <span class="glyphicon glyphicon-th"></span>
+	                <span class="lbl">我的地址</span>
+	            </a>
+	        </li>
+
+
+       <br>
+	        <header class="side-menu-title">基本操作</header>
+
+	          <li class="magenta">
+				<a href="transfer-accounts.html">
+					<span>
+						<span class="glyphicon glyphicon-list-alt"></span>
+						<span class="lbl">网络转帐</span>
+					</span>
+				</a>
+	        </li>
+
+
+	          <li class="magenta">
+				<a href="datatables-net.html">
+					<span>
+						<span class="font-icon glyphicon glyphicon-send"></span>
+						<span class="lbl">转帐记录</span>
+					</span>
+				</a>
+	        </li>
+
+
+	          <li class="magenta">
+				<a href="chat.html">
+					<span>
+						<span class="font-icon font-icon-edit"></span>
+						<span class="lbl">信息盒子</span>
+					</span>
+				</a>
+	        </li>
+
+	       
+	  
+
+ 
+
+
+
+
+       <br>
+	        <header class="side-menu-title">应用开发</header>
+
+
+
+
+	        <li class="blue"><a href="files.html">
+	            <span>
+	                <i class="font-icon font-icon-user"></i>
+	                <span class="lbl">API端口</span>
+	            </span></a>
+
+	        </li>
+	        <li class="orange-red "><a href="files.html">
+	            <span>
+	                <i class="font-icon font-icon-help"></i>
+	                <span class="lbl">开发环境</span>
+	            </span></a>
+
+	        </li>
+
+
+	  <br>
+	        <header class="side-menu-title">应用开发</header>
+
+
+	        <li class="blue">
+	            <a href="files.html">
+	                <i class="font-icon glyphicon glyphicon-paperclip"></i>
+	                <span class="lbl">AP2S应用市场</span>
+	            </a>
+	        </li>
+
+
+	    </ul>
+
+	    <section>
+	        <header class="side-menu-title">开发群社区</header>
+	        <ul class="side-menu-list">
+	            <li>
+	                <a href="#">
+	                    <i class="tag-color green"></i>
+	                    <span class="lbl">Github</span>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#">
+	                    <i class="tag-color grey-blue"></i>
+	                    <span class="lbl">OpenAova</span>
+	                </a>
+	            </li>
+
+	        </ul>
+	    </section>
+	</nav><!--.side-menu-->
+	 //首页显示数据
+	<div class="page-content">
+	    <div class="container-fluid">
+	        <div class="row">
+	            <div class="col-xl-6">
+	                <div class="chart-statistic-box">
+	                    <div class="chart-txt">
+	                        <div class="chart-txt-top">
+	                            <p><span class="unit">A/O</span><span class="number" id="balance" style="font-size: 1rem;"></span></p>
+	                            <p class="caption">我的TOKEN</p><BR>
+	                            <p  style="font-size:1.5rem;" id="money"><a onclick="safe();">安全检测</a></p>
+	                        </div>
+	                        <table class="tbl-data">
+	                            <tr>
+	                                
+	                                <td>n:<a id="money1" ></a></td>
+	                            </tr>
+	                            <tr>
+	                                <td>s:<a id="money2" ></a></td>
+	                            </tr>
+	                            <tr>
+	                                
+	                                <td>Blocks:<a id="money3" ></a></td>
+	                            </tr>
+	                        </table>
+	                    </div>
+	                    <div class="chart-container">
+	                        <div class="chart-container-in">
+	                            <div id="chart_div"></div>
+	                            <header class="chart-container-title">pool能力</header>
+	                            <div class="chart-container-x">
+	                                <div class="item"></div>
+	                                <div class="item">OV主池</div>
+	                                <div class="item">A9主池</div>
+	                                <div class="item">3K主池</div>
+	                                <div class="item">IO主池</div>
+	                                <div class="item">J98主池</div>
+	                                <div class="item">KI主池</div>
+	                                <div class="item">AO主池</div>
+	                                <div class="item"></div>
+	                            </div>
+	                            <div class="chart-container-y">
+	                                <div class="item">300</div>
+	                                <div class="item"></div>
+	                                <div class="item">250</div>
+	                                <div class="item"></div>
+	                                <div class="item">200</div>
+	                                <div class="item"></div>
+	                                <div class="item">150</div>
+	                                <div class="item"></div>
+	                                <div class="item">100</div>
+	                                <div class="item"></div>
+	                                <div class="item">50</div>
+	                                <div class="item"></div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div><!--.chart-statistic-box-->
+	            </div><!--.col-->
+	            <div class="col-xl-6">
+	                <div class="row">
+	                    <div class="col-sm-6">
+	                        <article class="statistic-box red">
+	                            <div>
+	                                <div class="number" id="number1">26</div>
+	                                <div class="caption"><div>应用数</div></div>
+	                                <div class="percent">
+	                                    <div class="arrow up"></div>
+	                                    <p>15%</p>
+	                                </div>
+	                            </div>
+	                        </article>
+	                    </div><!--.col-->
+	                    <div class="col-sm-6">
+	                        <article class="statistic-box purple">
+	                            <div>
+	                                <div class="number" id="number2">4500000</div>
+	                                <div class="caption"><div>恒量</div></div>
+	                                <div class="percent">
+	                                    <div class="arrow down"></div>
+	                                    <p>11%</p>
+	                                </div>
+	                            </div>
+	                        </article>
+	                    </div><!--.col-->
+	                    <div class="col-sm-6">
+	                        <article class="statistic-box yellow">
+	                            <div>
+	                                <div id="block_count" class="number" id="number3">25852545</div>
+	                                <div class="caption"><div>区块总数</div></div>
+	                                <div class="percent">
+	                                    <div class="arrow down"></div>
+	                                    <p>0%</p>
+	                                </div>
+	                            </div>
+	                        </article>
+	                    </div><!--.col-->
+	                    <div class="col-sm-6">
+	                        <article class="statistic-box green">
+	                            <div>
+	                                <div class="number" id="number4">452201</div>
+	                                <div class="caption"><div>交易数</div></div>
+	                                <div class="percent">
+	                                    <div class="arrow up"></div>
+	                                    <p>84%</p>
+	                                </div>
+	                            </div>
+	                        </article>
+	                    </div><!--.col-->
+	                </div><!--.row-->
+	            </div><!--.col-->
+	        </div><!--.row-->
+
+	        <div class="row">
+	            <div class="col-xl-6 dahsboard-column">
+	                <section class="box-typical box-typical-dashboard panel panel-default scrollable">
+	                    <header class="box-typical-header panel-heading">
+	                        <h3 class="panel-title">最近交易记录</h3>
+	                    </header>
+	                    <div class="box-typical-body panel-body">
+	                        <table class="tbl-typical" id="list">
+	                           <tr>
+	                                <th><div>状态</div></th>
+	                                <th><div>金额</div></th>
+	                                <th align="center"><div>值#</div></th>
+	                                <th align="center"><div>时间</div></th>
+	                            </tr>
+
+	                        </table>
+	                    </div><!--.box-typical-body-->
+	                </section><!--.box-typical-dashboard-->
+	        
+	            </div><!--.col-->
+	            <div class="col-xl-6 dahsboard-column">
+	                <section class="box-typical box-typical-dashboard panel panel-default scrollable">
+	                    <header class="box-typical-header panel-heading">
+	                        <h3 class="panel-title">区块浏览器</h3>
+	                    </header>
+	                    <div class="box-typical-body panel-body">
+	                        <table class="tbl-typical" id="list1" >
+	                            <tr>
+	                                <th><div>ID</div></th>
+	                                <th><div>TXID</div></th>
+	                                <th align="center"><div>值</div></th>
+	                                <th align="center"><div>Date</div></th>
+	                            </tr>
+	                            <tr>
+	                                <td>
+	                                    <span class="label label-success">Open</span>
+	                                </td>
+	                                <td>安全检测</td>
+	                                <td align="center">345s2334535</td>
+	                                <td nowrap align="center"><span class="semibold">Today</span> 8:30</td>
+	                            </tr>
+	                                  <tr>
+	                                <td>
+	                                    <span class="label label-success">Open</span>
+	                                </td>
+	                                <td>安全检测</td>
+	                                <td align="center">345s2334535</td>
+	                                <td nowrap align="center"><span class="semibold">Today</span> 8:30</td>
+	                            </tr>
+	                                  <tr>
+	                                <td>
+	                                    <span class="label label-success">Open</span>
+	                                </td>
+	                                <td>安全检测</td>
+	                                <td align="center">345s2334535</td>
+	                                <td nowrap align="center"><span class="semibold">Today</span> 8:30</td>
+	                            </tr>
+	                                  <tr>
+	                                <td>
+	                                    <span class="label label-success">Open</span>
+	                                </td>
+	                                <td>安全检测</td>
+	                                <td align="center">345s2334535</td>
+	                                <td nowrap align="center"><span class="semibold">Today</span> 8:30</td>
+	                            </tr>
+	                                  <tr>
+	                                <td>
+	                                    <span class="label label-success">Open</span>
+	                                </td>
+	                                <td>安全检测</td>
+	                                <td align="center">345s2334535</td>
+	                                <td nowrap align="center"><span class="semibold">Today</span> 8:30</td>
+	                            </tr>
+	                                  <tr>
+	                                <td>
+	                                    <span class="label label-success">Open</span>
+	                                </td>
+	                                <td>安全检测</td>
+	                                <td align="center">345s2334535</td>
+	                                <td nowrap align="center"><span class="semibold">Today</span> 8:30</td>
+	                            </tr>
+	                                  <tr>
+	                                <td>
+	                                    <span class="label label-success">Open</span>
+	                                </td>
+	                                <td>安全检测</td>
+	                                <td align="center">345s2334535</td>
+	                                <td nowrap align="center"><span class="semibold">Today</span> 8:30</td>
+	                            </tr>
+	                                  <tr>
+	                                <td>
+	                                    <span class="label label-success">Open</span>
+	                                </td>
+	                                <td>安全检测</td>
+	                                <td align="center">345s2334535</td>
+	                                <td nowrap align="center"><span class="semibold">Today</span> 8:30</td>
+	                            </tr>
+
+	                        </table>
+	                    </div><!--.box-typical-body-->
+	                </section><!--.box-typical-dashboard-->
+	           
+	            </div><!--.col-->
+	        </div>
+	    </div><!--.container-fluid-->
+	</div><!--.page-content-->
+
+
+	<script src="js/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script src="js/lib/popper/popper.min.js"></script>
+	<script src="js/lib/tether/tether.min.js"></script>
+	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+
+	<script type="text/javascript" src="js/lib/jqueryui/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/lib/lobipanel/lobipanel.min.js"></script>
+	<script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
+	<script type="text/javascript" src="loader.js"></script>
+	<script>
+       $(document).ready(function(){
+
+//格式化时间戳函数
+       function formatDateTime(timeStamp) {
+            var date = new Date();
+            date.setTime(timeStamp * 1000);
+            var y = date.getFullYear();
+            var m = date.getMonth() + 1;
+            m = m < 10 ? ('0' + m) : m;
+            var d = date.getDate();
+            d = d < 10 ? ('0' + d) : d;
+            var h = date.getHours();
+            h = h < 10 ? ('0' + h) : h;
+            var minute = date.getMinutes();
+            var second = date.getSeconds();
+            minute = minute < 10 ? ('0' + minute) : minute;
+            second = second < 10 ? ('0' + second) : second;
+            return y + '-' + m + '-' + d+' '+h+':'+minute+':'+second;
+        };
+
+
+
+//获取总数量
+	fetch('http://127.0.0.1:8085/%7B%22method%22:%22getbalance%22,%22params%22:[]%7D').then(function(res) {
+            return res.json();
+        }).then(function (data) {
+console.log(data);
+           $('#money').html(data.result)
+            
+
+
+            if (data.code == 200) {
+              console.log('获取到所有产品' ,data.data);
+              that.props.addAllProduct(data.data);
+            } else {
+              console.log(data.message);
+            }
+        })
+
+
+
+
+
+
+
+
+	fetch('http://127.0.0.1:8085/%7B%22method%22:%22getinfo%22,%22params%22:[]%7D').then(function(res) {
+            return res.json();
+        }).then(function (data_ok) {
+ 
+           $('#money1').html(data_ok.result.newmint)
+                  $('#money2').html(data_ok.result.stake)
+      $('#money3').html(data_ok.result.blocks)
+
+           
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//获取交易记录
+	fetch('http://127.0.0.1:8085/%7B%22method%22:%22listtransactions%22,%22params%22:[]%7D').then(function(res) {
+            return res.json();
+        }).then(function (data) {
+			console.log(data);
+			var html='';
+
+
+			for( val in data.result){
+
+				html+='<tr><td><span class="label label-success">交易</span></td> <td>'+data.result[val].address+'</td><td align="center">'+data.result[val].amount+'</td>'
+				html+='<td nowrap="" align="center"><span class="semibold"></span>'+formatDateTime(data.result[val].time)+'</td></tr>'
+			}
+
+           $('#list').html(html)
+            
+            if (data.code == 200) {
+              console.log('获取到所有产品' ,data.data);
+              that.props.addAllProduct(data.data);
+            } else {
+              console.log(data.message);
+            }
+        })
+
+
+
+
+
+        	fetch('http://127.0.0.1:8085/%7B%22method%22:%22listtransactions%22,%22params%22:[]%7D').then(function(res) {
+            return res.json();
+        }).then(function (data) {
+			console.log(data);
+			var html='';
+
+
+			for( val in data.result){
+
+				html+='<tr><td><span class="label label-success">Open</span></td> <td>'+data.result[val].txid+'</td><td align="center">'+data.result[val].fee+'</td>'
+				html+='<td nowrap="" align="center"><span class="semibold"></span>'+formatDateTime(data.result[val].time)+'</td></tr>'
+			}
+
+           $('#list1').html(html)
+            
+            if (data.code == 200) {
+              console.log('获取到所有产品' ,data.data);
+              that.props.addAllProduct(data.data);
+            } else {
+              console.log(data.message);
+            }
+        })
+
+
+
+
+	fetch('http://127.0.0.1:8085/%7B%22method%22:%22listtransactions%22,%22params%22:[]%7D').then(function(res) {
+            return res.json();
+        }).then(function (data) {
+			console.log(data);
+			var html='';
+			for( val in data.result){
+
+				// html+='<tr><td><span class="label label-success">Open</span></td> <td>'+data.result[val].address+'</td><td align="center">'+data.result[val].amount+'</td>'
+				// html+='<td nowrap="" align="center"><span class="semibold"></span>'+formatDateTime(data.result[val].time)+'</td></tr>'
+				html+='<tr>'			
+				html+='<td>'+data.result[val].address+'</td>'				
+				html+='<td>'+data.result[val].category+'</td>'				
+				html+='<td>'+data.result[val].amount+'</td>'				
+				html+='<td>'+data.result[val].fee+'</td>'				
+				html+='<td>'+formatDateTime(data.result[val].time)+'</td>'			
+				html+='<td>'+formatDateTime(data.result[val].timereceived)+'</td>'				
+				html+='</tr>'			
+			}
+    //document.write('html');
+				 document.getElementById("tt").innerHTML=html; 
+          // $('#tt').html(html)
+            
+            if (data.code == 200) {
+              // console.log('获取到所有产品' ,data.data);
+              that.props.addAllProduct(data.data);
+            } else {
+              console.log(data.message);
+            }
+        })
+
+
+
+
+
+
+
+
+
+
+
+//请求 外网一个json 文件  用来 获取4个固定值
+ 
+
+
+
+})
+
+
+  //           $.ajax({
+  //               url:"/admin/comm.php",
+  //               type: "GET",
+
+  //               success: function(data) {
+  //                   var data = JSON.parse(data);
+  //                   if(data.msg == 1){
+  //                       alert('已经登录');
+  //                   } else {
+  //                       window.location.href  = '/build/sign-in.html';
+  //                   }
+  //               }
+  //           })
+  //       })
+ 
+  //       $(document).ready(function(){
+  //           $.ajax({
+  //               url:"/admin/index.php",
+  //               type: "GET",
+  //               dataType: "json",
+  //               success: function(data) {
+  //                   console.log(JSON.stringify(data));
+  //                   //alert(data['money']);
+  //                   $("#stake").text(data['info']['stake']);
+  //                   $("#newmint").text(data['info']['newmint']);
+  //                   $("#transaction_num").text(data['transaction_num']);
+  //                   $("#block_count").text(data['block_count']);
+  //                   $("#balance").text(data['money']);
+  //                   //$("#balance").text(data['money']);
+  //                   var html=''
+  //                   //alert(data['transactions']['result']['amount']);
+  //                   for(val in data['result']){
+  //                       html+='<tr>'
+  //                       html+='<td>'
+  //                       html+='<span class="label label-primary">50%</span>'
+  //                       html+='<span class="label label-success">成功</span>'
+  //                       html+='</td>'
+  //                       html+='<td>'+data['result'][val]['amount']+'</td>'
+  //                       html+='<td align="center">'+data['result'][val]['amount']+'</td>'
+  //                       html+='<td class="color-blue-grey" nowrap align="center"><span class="semibold">'+formatDateTime(data['result'][val]['time'])+'</span></td>'
+  //                       html+='</tr>'
+  //                   }
+  //                   $('.row #list').append(html)
+  //               }
+  //           })
+  //       })
+		// //点击标签触发事件
+  //       function logout() {
+  //           $.ajax({
+  //               url: "/admin/logout.php",
+  //               type: "POST",
+  //               data: "",
+  //               dataType: 'json',
+  //               success: function (data) {
+  //                   console.log(JSON.stringify(data));
+  //                   if (data.msg == 1) {
+  //                       window.location.href  = '/build/sign-in.html';
+  //                   } else {
+  //                       alert(data.message)
+  //                   }
+  //               }
+  //           });
+  //       }
+		// $(document).ready(function() {
+  //           $('.panel').each(function () {
+  //               try {
+  //                   $(this).lobiPanel({
+  //                       sortable: true
+  //                   }).on('dragged.lobiPanel', function(ev, lobiPanel){
+  //                       $('.dahsboard-column').matchHeight();
+  //                   });
+  //               } catch (err) {}
+  //           });
+
+			google.charts.load('current', {'packages':['corechart']});
+			google.charts.setOnLoadCallback(drawChart);
+			function drawChart() {
+				var dataTable = new google.visualization.DataTable();
+				dataTable.addColumn('string', 'Day');
+				dataTable.addColumn('number', 'Values');
+				// A column for custom tooltip content
+				dataTable.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+				dataTable.addRows([
+					['MON',  130, ' '],
+					['TUE',  130, '130'],
+					['WED',  180, '180'],
+					['THU',  175, '175'],
+					['FRI',  200, '200'],
+					['SAT',  170, '170'],
+					['SUN',  250, '250'],
+					['MON',  220, '220'],
+					['TUE',  220, ' ']
+				]);
+
+				var options = {
+					height: 314,
+					legend: 'none',
+					areaOpacity: 0.18,
+					axisTitlesPosition: 'out',
+					hAxis: {
+						title: '',
+						textStyle: {
+							color: '#fff',
+							fontName: 'Proxima Nova',
+							fontSize: 11,
+							bold: true,
+							italic: false
+						},
+						textPosition: 'out'
+					},
+					vAxis: {
+						minValue: 0,
+						textPosition: 'out',
+						textStyle: {
+							color: '#fff',
+							fontName: 'Proxima Nova',
+							fontSize: 11,
+							bold: true,
+							italic: false
+						},
+						baselineColor: '#16b4fc',
+						ticks: [0,25,50,75,100,125,150,175,200,225,250,275,300,325,350],
+						gridlines: {
+							color: '#1ba0fc',
+							count: 15
+						}
+					},
+					lineWidth: 2,
+					colors: ['#fff'],
+					curveType: 'function',
+					pointSize: 5,
+					pointShapeType: 'circle',
+					pointFillColor: '#f00',
+					backgroundColor: {
+						fill: '#008ffb',
+						strokeWidth: 0,
+					},
+					chartArea:{
+						left:0,
+						top:0,
+						width:'100%',
+						height:'100%'
+					},
+					fontSize: 11,
+					fontName: 'Proxima Nova',
+					tooltip: {
+						trigger: 'selection',
+						isHtml: true
+					}
+				};
+
+				var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+				chart.draw(dataTable, options);
+			}
+			$(window).resize(function(){
+				drawChart();
+				setTimeout(function(){
+				}, 1000);
+			});
+		// });
+
+
+		function t(){
+
+			alert('请到官网下载或是第三方软件进行操作');
+		}
+
+
+
+
+		function tt(){
+
+			
+	fetch('http://127.0.0.1:8085/%7B%22method%22:%22setgenerate%22,%22params%22:[false]%7D').then(function(res) {
+            return res.json();
+        }).then(function (data_ok) {
+ 
+           $('#money1').html(data_ok.result.newmint)
+                  $('#money2').html(data_ok.result.stake)
+      $('#money3').html(data_ok.result.blocks)
+
+           
+        })
+
+		}
+	
+
+
+	function ttt(){
+
+			
+	fetch('http://127.0.0.1:8085/%7B%22method%22:%22setgenerate%22,%22params%22:[true]%7D').then(function(res) {
+            return res.json();
+        }).then(function (data_ok) {
+ 
+           $('#money1').html(data_ok.result.newmint)
+                  $('#money2').html(data_ok.result.stake)
+      $('#money3').html(data_ok.result.blocks)
+
+           
+        })
+
+		}
+
+
+
+
+
+$.get('http://www.aova.me/web/a.php',{},function(data){
+
+		if(data.version == 1)
+		{
+			alert(data.msg);
+		}
+
+},'json')
+
+
+
+	</script>
+<script src="js/app.js"></script>
+<script>
+	
+function safe(){
+alert('如果一直提示.请先关系所有进程，然后运行 AOVA安全检测');
+
+}
+
+
+</script>
+</body>
+</html>

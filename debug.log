@@ -1,0 +1,15 @@
+[0510/113710.677:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: URL 未使用可识别的协议 (0x2ee6)
+[0510/114718.845:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: URL 未使用可识别的协议 (0x2ee6)
+[0510/120333.948:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: URL 未使用可识别的协议 (0x2ee6)
+[0510/120356.759:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: URL 未使用可识别的协议 (0x2ee6)
+[0510/121017.092:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: URL 未使用可识别的协议 (0x2ee6)
+[0510/121600.133:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: URL 未使用可识别的协议 (0x2ee6)
+[0510/121618.571:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: URL 未使用可识别的协议 (0x2ee6)
+[0510/121633.976:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: URL 未使用可识别的协议 (0x2ee6)
+[0510/121650.513:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: URL 未使用可识别的协议 (0x2ee6)
+[0510/121651.225:WARNING:minidump_to_upload_parameters.cc(66)] duplicate annotation name metrics_client_id, discarding value ca366c5a172e4c20a09820132f97640e
+[0510/121651.241:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: URL 未使用可识别的协议 (0x2ee6)
+[0510/122905.745:WARNING:minidump_to_upload_parameters.cc(66)] duplicate annotation name metrics_client_id, discarding value ca366c5a172e4c20a09820132f97640e
+[0510/122905.760:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: URL 未使用可识别的协议 (0x2ee6)
+[0510/125422.180:WARNING:minidump_to_upload_parameters.cc(66)] duplicate annotation name metrics_client_id, discarding value ca366c5a172e4c20a09820132f97640e
+[0510/125422.198:ERROR:http_transport_win.cc(175)] WinHttpCrackUrl: URL 未使用可识别的协议 (0x2ee6)

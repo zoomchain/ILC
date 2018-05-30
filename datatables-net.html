@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>AOVA客户端 1.0 -简体中文版</title>
+
+	<link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
+	<link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
+	<link href="img/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
+	<link href="img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
+	<link href="img/favicon.png" rel="icon" type="image/png">
+	<link href="img/favicon.ico" rel="shortcut icon">
+<script src="js/lib/jquery/jquery-3.2.1.min.js"></script>
+
+
+
+
+<script>
+		
+
+ 
+		$(function() {
+		
+
+
+       function formatDateTime(timeStamp) {
+            var date = new Date();
+            date.setTime(timeStamp * 1000);
+            var y = date.getFullYear();
+            var m = date.getMonth() + 1;
+            m = m < 10 ? ('0' + m) : m;
+            var d = date.getDate();
+            d = d < 10 ? ('0' + d) : d;
+            var h = date.getHours();
+            h = h < 10 ? ('0' + h) : h;
+            var minute = date.getMinutes();
+            var second = date.getSeconds();
+            minute = minute < 10 ? ('0' + minute) : minute;
+            second = second < 10 ? ('0' + second) : second;
+            return y + '-' + m + '-' + d+' '+h+':'+minute+':'+second;
+        };
+
+
+	fetch('http://127.0.0.1:8085/%7B%22method%22:%22listtransactions%22,%22params%22:[]%7D').then(function(res) {
+            return res.json();
+        }).then(function (data) {
+			console.log(data);
+			var html='';
+			for( val in data.result){
+
+				// html+='<tr><td><span class="label label-success">Open</span></td> <td>'+data.result[val].address+'</td><td align="center">'+data.result[val].amount+'</td>'
+				// html+='<td nowrap="" align="center"><span class="semibold"></span>'+formatDateTime(data.result[val].time)+'</td></tr>'
+				html+='<tr>'			
+				 	
+				html+='<td>'+data.result[val].category+'</td>'				
+				html+='<td>'+data.result[val].amount+'</td>'				
+			 	
+				html+='<td>'+formatDateTime(data.result[val].time)+'</td>'			
+				html+='<td>'+formatDateTime(data.result[val].timereceived)+'</td>'				
+				html+='</tr>'			
+			}
+    //document.write('html');
+				 document.getElementById("tt").innerHTML=html; 
+          // $('#tt').html(html)
+            
+            if (data.code == 200) {
+              // console.log('获取到所有产品' ,data.data);
+              that.props.addAllProduct(data.data);
+            } else {
+              console.log(data.message);
+            }
+        })
+
+
+
+
+		});
+
+
+
+
+
+
+	</script>
+
+
+
+
+
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+<link rel="stylesheet" href="css/lib/datatables-net/datatables.min.css">
+<link rel="stylesheet" href="css/separate/vendor/datatables-net.min.css">
+    <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="with-side-menu-addl-full">
+
+	<header class="site-header">
+	    <div class="container-fluid">
+	        <a href="#" class="site-logo">
+	            <img class="hidden-md-down" src="img/logo-2.png" alt="">
+	        
+	        </a>
+
+	        <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">
+	            <span>toggle menu</span>
+	        </button>
+
+	        <button class="hamburger hamburger--htla">
+	            <span>toggle menu</span>
+	        </button>
+	        <div class="site-header-content">
+	            <div class="site-header-content-in">
+	                <div class="site-header-shown">
+	            
+	     
+
+
+	                    <div class="dropdown dropdown-lang">
+	                        <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                            <span class="flag-icon flag-icon-us"></span>
+	                        </button>
+	                        <div class="dropdown-menu dropdown-menu-right">
+	                            <div class="dropdown-menu-col">
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-ru"></span>Русский</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-de"></span>Deutsch</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-it"></span>Italiano</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-es"></span>Español</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-pl"></span>Polski</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-li"></span>Lietuviu</a>
+	                            </div>
+	                            <div class="dropdown-menu-col">
+	                                <a class="dropdown-item current" href="#"><span class="flag-icon flag-icon-us"></span>English</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-fr"></span>Français</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-by"></span>Беларускi</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-ua"></span>Українська</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-cz"></span>Česky</a>
+	                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-ch"></span>中國</a>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	               
+
+	                    <button type="button" class="burger-right">
+	                        <i class="font-icon-menu-addl"></i>
+	                    </button>
+	                </div><!--.site-header-shown-->
+
+	                <div class="mobile-menu-right-overlay"></div>
+	                <div class="site-header-collapsed">
+	                    <div class="site-header-collapsed-in">
+	                        <div class="dropdown dropdown-typical">
+	                            <div class="dropdown-menu" aria-labelledby="dd-header-sales">
+	                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>Quant and Verbal</a>
+	                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>Real Gmat Test</a>
+	                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-speed"></span>Prep Official App</a>
+	                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-users"></span>CATprer Test</a>
+	                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-comments"></span>Third Party Test</a>
+	                            </div>
+	                        </div>
+	                        <div class="dropdown dropdown-typical">
+	                            <a class="dropdown-toggle" id="dd-header-marketing" data-target="#" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                                <span class="font-icon font-icon-cogwheel"></span>
+	                                <span class="lbl">导出信息</span>
+	                            </a>
+
+	                            <div class="dropdown-menu" aria-labelledby="dd-header-marketing">
+	                                <a class="dropdown-item" href="#">导出交易记录</a>
+	                                 <div class="dropdown-divider"></div>
+	                                <a class="dropdown-item" href="#">导出我的信息</a>
+
+
+	                            </div>
+	                        </div>
+	                        <div class="dropdown dropdown-typical">
+	                            <a class="dropdown-toggle" id="dd-header-social" data-target="#" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                                <span class="font-icon font-icon-share"></span>
+	                                <span class="lbl">应用分享</span>
+	                            </a>
+
+	                            <div class="dropdown-menu" aria-labelledby="dd-header-social">
+	                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-home"></span>一键分享</a>
+	                                <a class="dropdown-item" href="#"><span class="font-icon font-icon-cart"></span>测试环境</a>
+
+	                            </div>
+	                        </div>
+	                        <div class="dropdown dropdown-typical">
+	                            <a href="#" class="dropdown-toggle no-arr">
+	                                <span class="font-icon font-icon-page"></span>
+	                                <span class="lbl">我的项目</span>
+	                                <span class="label label-pill label-danger">35</span>
+	                            </a>
+	                        </div>
+
+
+	                        <div class="dropdown">
+
+
+	                        </div>
+	                        <div class="help-dropdown">
+
+
+
+
+	                        <a class="btn btn-nav btn-rounded btn-inline btn-danger-outline" href="" onclick="t();">
+	                            一键挖矿
+	                        </a>
+	                        <div class="site-header-search-container">
+	                            <form class="site-header-search closed">
+	                                <input type="text" placeholder="搜索应用"/>
+	                                <button type="submit">
+	                                    <span class="font-icon-search"></span>
+	                                </button>
+	                                <div class="overlay"></div>
+	                            </form>
+	                        </div>
+	                    </div><!--.site-header-collapsed-in-->
+	                </div><!--.site-header-collapsed-->
+	            </div><!--site-header-content-in-->
+	        </div><!--.site-header-content-->
+	    </div><!--.container-fluid-->
+	</header><!--.site-header-->
+
+	<div class="mobile-menu-left-overlay"></div>
+	<nav class="side-menu">
+	    <ul class="side-menu-list">
+	        <li class="grey">
+	       <a href="index.html">  <span>
+	                <i class="font-icon font-icon-dashboard"></i>
+	               <span class="lbl">总控制台</span>
+	            </span> </a>
+
+	        </li>
+
+
+
+	           <li class="blue-dirty">
+	            <a href="prices.html">
+	                <span class="glyphicon glyphicon-th"></span>
+	                <span class="lbl">我的地址</span>
+	            </a>
+	        </li>
+
+
+       <br>
+	        <header class="side-menu-title">基本操作</header>
+
+	          <li class="magenta">
+				<a href="transfer-accounts.html">
+					<span>
+						<span class="glyphicon glyphicon-list-alt"></span>
+						<span class="lbl">网络转帐</span>
+					</span>
+				</a>
+	        </li>
+
+
+	          <li class="magenta">
+				<a href="datatables-net.html">
+					<span>
+						<span class="font-icon glyphicon glyphicon-send"></span>
+						<span class="lbl">转帐记录</span>
+					</span>
+				</a>
+	        </li>
+
+
+	          <li class="magenta">
+				<a href="chat.html">
+					<span>
+						<span class="font-icon font-icon-edit"></span>
+						<span class="lbl">信息盒子</span>
+					</span>
+				</a>
+	        </li>
+
+	       
+	  
+
+ 
+
+
+
+
+       <br>
+	        <header class="side-menu-title">应用开发</header>
+
+
+
+
+	        <li class="blue"><a href="files.html">
+	            <span>
+	                <i class="font-icon font-icon-user"></i>
+	                <span class="lbl">API端口</span>
+	            </span></a>
+
+	        </li>
+	        <li class="orange-red "><a href="files.html">
+	            <span>
+	                <i class="font-icon font-icon-help"></i>
+	                <span class="lbl">开发环境</span>
+	            </span></a>
+
+	        </li>
+
+
+	  <br>
+	        <header class="side-menu-title">应用开发</header>
+
+
+	        <li class="blue">
+	            <a href="files.html">
+	                <i class="font-icon glyphicon glyphicon-paperclip"></i>
+	                <span class="lbl">AP2S应用市场</span>
+	            </a>
+	        </li>
+
+
+	    </ul>
+
+	    <section>
+	        <header class="side-menu-title">开发群社区</header>
+	        <ul class="side-menu-list">
+	            <li>
+	                <a href="#">
+	                    <i class="tag-color green"></i>
+	                    <span class="lbl">Github</span>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#">
+	                    <i class="tag-color grey-blue"></i>
+	                    <span class="lbl">OpenAova</span>
+	                </a>
+	            </li>
+
+	        </ul>
+	    </section>
+	</nav><!--.side-menu-->
+
+	<nav class="side-menu-addl">
+		<ul class="side-menu-addl-list">
+			<li>
+				<a href="datatables-net.html">
+					<span class="tbl-row">
+						<span class="tbl-cell tbl-cell-caption">刷新(交易数据)</span>
+					</span>
+				</a>
+			</li>
+			 
+		</ul>
+	</nav>
+
+	<div class="page-content">
+		<div class="container-fluid">
+			<header class="section-header">
+				<div class="tbl">
+					<div class="tbl-row">
+						<div class="tbl-cell">
+							<h2>我的交易</h2>
+							<div class="subtitle">我所有的交易信息_您可以通过这里进行查看</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<section class="card">
+				<div class="card-block">
+					<table id="example" class="display table table-striped table-bordered" cellspacing="0" width="100%">
+						<thead>
+						<tr>
+							 
+							<th>状态</th>
+							<th>AOVA</th>
+							 
+							<th>转帐时间</th>
+							<th>广播时间</th>
+						</tr>
+						</thead>
+						<tfoot>
+						<tr>
+							 
+							<th>状态</th>
+							<th>AOVA</th>
+							 
+							<th>转帐时间</th>
+							<th>广播时间</th>
+						</tr>
+						</tfoot>
+
+						<tbody id="tt">
+
+
+
+
+				
+
+
+
+
+
+						</tbody>
+					</table>
+				</div>
+			</section>
+		</div><!--.container-fluid-->
+	</div><!--.page-content-->
+
+	
+
+	
+	<script src="js/lib/popper/popper.min.js"></script>
+	<script src="js/lib/tether/tether.min.js"></script>
+	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+
+	 <script>
+	 		function t(){
+
+			alert('请到官网下载或是第三方软件进行操作');
+		}
+	 </script>
+
+	
+<script src="js/app.js"></script>
+</body>
+</html>

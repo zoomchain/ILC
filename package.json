@@ -1,0 +1,15 @@
+{
+  "name":"aova",
+  "main":"aova.html",
+  "window": {
+    "title": "AOVA 客户端",
+    "frame":true,
+    "icon": "link.png",
+    "toolbar": true,
+  
+   
+    "width": 1100,
+    "height": 768
+ 
+  }
+}
